@@ -1,0 +1,10 @@
+<!-- dropdown_item.xml -->
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dropdown_text"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background"
+    android:fontFamily="@font/roboto_mono"
+    android:paddingVertical="16dp"
+    android:paddingStart="12dp"
+    android:textSize="20sp" />

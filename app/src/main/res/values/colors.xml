@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#d3d3d3</color>
+    <color name="background">#34373a</color>
+    <color name="primary">#63a46c</color>
+    <color name="primary_ripple">#599361</color>
+    <color name="secondary">#D3D3D3</color>
+    <color name="accent">#C1292E</color>
+    <color name="pistachio">#93C572</color>
+    <color name="efflo">#7e9db0</color>
+</resources>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
+    <application
+        android:shell="true"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/efflo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/efflo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Efflo"
+        tools:targetApi="31">
+        <profileable android:shell="true"/>
+        <meta-data android:name="android.webkit.WebView.MetricsOptOut" android:value="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DisclaimerActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".SettingsActivity" />
+        <activity
+            android:name=".settings.LegalSettingsActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".settings.TimerSettingsActivity" />
+        <activity android:name=".settings.BreathSettingsActivity" />
+        <activity android:name=".settings.WeeklyGoalSettingsActivity" />
+        <activity android:name=".StatsActivity" />
+        <activity android:name=".settings.ContactActivity" />
+        <activity
+            android:name=".MediaPlayerActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name=".SelectionActivity"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name=".services.MediaPlayerService"
+            android:foregroundServiceType="mediaPlayback" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

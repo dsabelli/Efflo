@@ -1,0 +1,84 @@
+<resources>
+    <string name="app_name">Efflo</string>
+    <string-array name="time">
+        <item>2 mins</item>
+        <item>3 mins</item>
+        <item>5 mins</item>
+        <item>8 mins</item>
+        <item>10 mins</item>
+        <item>12 mins</item>
+        <item>15 mins</item>
+        <item>20 mins</item>
+        <item>25 mins</item>
+        <item>30 mins</item>
+    </string-array>
+    <string name="min">min</string>
+    <string name="current_streak">Current streak</string>
+    <string name="longest_streak">Longest streak</string>
+    <string name="sessions_completed">Sessions completed</string>
+    <string name="minutes_meditated">Minutes meditated</string>
+    <string name="do_not_disturb">Do not disturb</string>
+    <string name="vibration">Vibration</string>
+    <string name="my_stats">My Stats</string>
+    <string name="my_settings">Settings</string>
+    <string name="breath_presets">Breath presets</string>
+    <string name="weekly_goal">Weekly goal</string>
+    <string name="timer_presets">Timer presets</string>
+    <string name="time_preset">Time preset</string>
+    <string name="breath_method_preset">Breath method preset</string>
+    <string name="breath_timer_preset">Breath timer preset</string>
+    <string name="soundtrack_preset">Soundtrack preset</string>
+    <string name="method_preset">Method preset</string>
+    <string name="number_of_days">Number of days</string>
+    <string name="send">Send</string>
+    <string name="body">Body</string>
+    <string name="contact">Contact</string>
+    <string name="subject">Subject</string>
+    <string name="terms_and_conditions">Terms and conditions</string>
+
+    <string-array name="breath_methods">
+        <item>4–7–8</item>
+        <item>4–2–4</item>
+        <item>4–4–4</item>
+    </string-array>
+
+    <string-array name="soundtracks">
+        <item>Birds</item>
+        <item>Celestial</item>
+        <item>Peace</item>
+        <item>Water</item>
+        <item>Silence</item>
+    </string-array>
+
+    <string-array name="weeklyGoal">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+    </string-array>
+
+    <string name="disclaimer">
+Disclaimer
+    </string>
+    <string name="todo">TODO</string>
+    <string name="legal">Legal</string>
+    <string name="content_and_postings">Content and Postings</string>
+    <string name="content_and_postings_text">This disclaimer (&quot;Disclaimer&quot;) sets forth the general guidelines, disclosures, and terms of your use of the &quot;Efflo&quot; mobile app (&quot;Mobile App&quot;) and any of its related products and services (collectively, &quot;Services&quot;). This Disclaimer is a legally binding agreement between you (&quot;User&quot;, &quot;you&quot; or &quot;your&quot;) and this Mobile App developer (&quot;Operator&quot;, &quot;we&quot;, &quot;us&quot; or &quot;our&quot;). By accessing and using the Mobile App and Services, you acknowledge that you have read, understood, and agree to be bound by the terms of this Disclaimer. If you are entering into this Disclaimer on behalf of a business or other legal entity, you represent that you have the authority to bind such entity to this Disclaimer, in which case the terms &quot;User&quot;, &quot;you&quot; or &quot;your&quot; shall refer to such entity. If you do not have such authority, or if you do not agree with the terms of this Disclaimer, you must not accept this Disclaimer and may not access and use the Mobile App and Services. You acknowledge that this Disclaimer is a contract between you and the Operator, even though it is electronic and is not physically signed by you, and it governs your use of the Mobile App and Services.
+    </string>
+    <string name="representation">Representation</string>
+    <string name="representation_text">Any views or opinions represented in the Mobile App do not represent those of people, institutions or organizations that the Operator or creators may or may not be associated with in professional or personal capacity, unless explicitly stated. Any views or opinions are not intended to malign any religion, ethnic group, club, organization, company, or individual.</string>
+    <string name="indem_and_warr">Indemnification and warranties</string>
+    <string name="indem_and_warr_text">All content found on the Mobile App, including: text, images, audio, or other formats were created for informational purposes only. The Content is not intended to be a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition. Never disregard professional medical advice or delay in seeking it because of something you have learned through the Mobile App or Services. If you think you may have a medical emergency, call your doctor, go to the emergency department, or call 911 immediately. We do not endorse any procedures, opinions, or other information that may be mentioned on the Mobile App and Services. Reliance on any information provided through this Mobile App and Services is solely at your own risk. The Mobile App and Services may contain information or materials that you find offensive, in which case, you may not want to use our Mobile App and Services. The content on the Mobile App and Services are provided on an &quot;as is&quot; basis. The Operator is not responsible for any errors or omissions, or for the results obtained from the use of information contained in this Mobile App. All information in the Mobile App is provided &quot;as is&quot;, with no guarantee of completeness, accuracy, timeliness or of the results obtained from the use of this information, and without warranty of any kind, express or implied. In no event will the Operator, or its partners, employees or agents, be liable to you or anyone else for any decision made or action taken in reliance on the information in the Mobile App, or for any consequential, special or similar damages, even if advised of the possibility of such damages. Information contained in the Mobile App are subject to change at any time and without warning.</string>
+    <string name="changes">Changes and amendments</string>
+    <string name="changes_text">We reserve the right to modify this Disclaimer or its terms relating to the Mobile App and Services at any time, effective upon posting of an updated version of this Disclaimer in the Mobile App. When we do, we will revise the updated date at the bottom of this page. Continued use of the Mobile App and Services after any such changes shall constitute your consent to such changes.</string>
+    <string name="acceptance">Acceptance of this disclaimer</string>
+    <string name="acceptance_text">You acknowledge that you have read this Disclaimer and agree to all its terms and conditions. By accessing and using the Mobile App and Services you agree to be bound by this Disclaimer. If you do not agree to abide by the terms of this Disclaimer, you are not authorized to access or use the Mobile App and Services.</string>
+    <string name="contacting_us">Contacting us</string>
+    <string name="contacting_us_text">If you would like to contact us to understand more about this Disclaimer or wish to contact us concerning any matter relating to it, you may send an email using the Contact form in the Mobile App.</string>
+    <string name="last_updated">April 08, 2024</string>
+    <string name="last_updated_text">This document was last updated on April 08, 2024.</string>
+</resources>

@@ -1,0 +1,21 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Efflo" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="windowSplashScreenAnimatedIcon">@drawable/efflo</item>
+        <item name="android:windowBackground">@color/background</item>
+        <item name="buttonStyle">@style/CustomButtonStyle</item>
+        <item name="materialButtonStyle">@style/CustomButtonStyle</item>
+        <item name="android:statusBarColor">@color/background</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/open_sans</item>
+        <item name="android:colorPrimary">@color/efflo</item>
+    </style>
+    <style name="CustomButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/primary</item> <!-- Your desired background color -->
+        <item name="rippleColor">@color/primary_ripple</item> <!-- Your desired ripple color -->
+    </style>
+
+    <style name="Theme.Efflo" parent="Base.Theme.Efflo" />
+</resources>
