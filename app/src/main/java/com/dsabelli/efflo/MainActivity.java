@@ -94,7 +94,7 @@ public class MainActivity extends BaseActivity {
 
     private void handleWeekReset() {
         // Get last login date
-        long lastLoginDate = prefsSettings.getInt(prefsSettings.LAST_LOGIN_KEY,0);
+        long lastLoginDate = prefsSettings.getLong(prefsSettings.LAST_LOGIN_KEY,0);
 
         // Calculate the difference between the current date and the last launch date
         long diffInMillies = Math.abs(new Date().getTime() - lastLoginDate);
