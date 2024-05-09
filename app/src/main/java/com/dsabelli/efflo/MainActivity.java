@@ -9,10 +9,11 @@ import android.widget.TextView;
 
 import androidx.core.splashscreen.SplashScreen;
 
-import com.dsabelli.efflo.helpers.DayOfWeek;
 import com.dsabelli.efflo.sharedPrefs.SharedPrefsSettings;
 
 import java.util.Calendar;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends BaseActivity {
     public static final String MEDIA_CHANNEL_ID = "media_player_channel";
@@ -92,8 +93,14 @@ public class MainActivity extends BaseActivity {
 
 
     private void handleWeekReset() {
+        // Get last login date
+        long lastLoginDate = prefsSettings.getInt(prefsSettings.LAST_LOGIN_KEY,0);
+
+        // Calculate the difference between the current date and the last launch date
+        long diffInMillies = Math.abs(new Date().getTime() - lastLoginDate);
+        long daysSinceLastLogin = TimeUnit.DAYS.convert(diffInMillies, TimeUnit.MILLISECONDS);
             // Check if today is Sunday
-            if (DayOfWeek.getCurrentDayOfWeek() == Calendar.SUNDAY) {
+            if (daysSinceLastLogin>=7) {
                 // Reset the week tally to 0
                 prefsSettings.setInt(prefsSettings.WEEK_TALLY_KEY, 0);
                 // Loop through each day of the week and reset its status to false
