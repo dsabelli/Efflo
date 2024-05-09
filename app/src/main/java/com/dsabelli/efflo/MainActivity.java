@@ -9,11 +9,13 @@ import android.widget.TextView;
 
 import androidx.core.splashscreen.SplashScreen;
 
+import com.dsabelli.efflo.helpers.DayOfWeek;
 import com.dsabelli.efflo.sharedPrefs.SharedPrefsSettings;
 
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends BaseActivity {
     public static final String MEDIA_CHANNEL_ID = "media_player_channel";
@@ -23,7 +25,6 @@ public class MainActivity extends BaseActivity {
     SplashScreen splashScreen;
     long currentDate;
     SharedPrefsSettings prefsSettings;
-
 
 
     @Override
@@ -90,24 +91,24 @@ public class MainActivity extends BaseActivity {
     }
 
 
-
-
     private void handleWeekReset() {
-        // Get last login date
-        long lastLoginDate = prefsSettings.getLong(prefsSettings.LAST_LOGIN_KEY,0);
+        // Get last reset day
+        long lastResetDay = prefsSettings.getLong(prefsSettings.LAST_RESET_KEY, 0);
 
-        // Calculate the difference between the current date and the last launch date
-        long diffInMillies = Math.abs(new Date().getTime() - lastLoginDate);
-        long daysSinceLastLogin = TimeUnit.DAYS.convert(diffInMillies, TimeUnit.MILLISECONDS);
-            // Check if today is Sunday
-            if (daysSinceLastLogin>=7) {
-                // Reset the week tally to 0
-                prefsSettings.setInt(prefsSettings.WEEK_TALLY_KEY, 0);
-                // Loop through each day of the week and reset its status to false
-                for (int i = 1; i < 8; i++) {
-                    prefsSettings.setBoolean("day" + i, false);
-                }
+        // Convert the last reset day from milliseconds to a LocalDate object
+        LocalDate lastResetDate = Instant.ofEpochMilli(lastResetDay).atZone(ZoneId.systemDefault()).toLocalDate();
+
+        // Check if the current date is in the same calendar week as the last reset date
+        if (!DayOfWeek.inSameCalendarWeek(lastResetDate)) {
+            // Reset the week tally to 0
+            prefsSettings.setInt(prefsSettings.WEEK_TALLY_KEY, 0);
+            // Update the last reset day
+            prefsSettings.setLong(prefsSettings.LAST_RESET_KEY, LocalDate.now(ZoneId.systemDefault()).atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli());
+            // Loop through each day of the week and reset its status to false
+            for (int i = 1; i < 8; i++) {
+                prefsSettings.setBoolean("day" + i, false);
             }
+        }
     }
 
 

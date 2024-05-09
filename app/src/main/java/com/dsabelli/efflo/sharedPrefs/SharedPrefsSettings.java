@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 
 public class SharedPrefsSettings {
     private static final String PREFS_NAME = "EffloSettings";
+    public final String LAST_RESET_KEY = "last_reset";
     public final String DISCLAIMER_KEY = "disclaimer";
     public final String TIMER_HEADING = "Timer";
     public final String VIBRATION_KEY = "vibration";
