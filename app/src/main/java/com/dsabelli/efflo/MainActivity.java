@@ -12,9 +12,6 @@ import androidx.core.splashscreen.SplashScreen;
 import com.dsabelli.efflo.helpers.DayOfWeek;
 import com.dsabelli.efflo.sharedPrefs.SharedPrefsSettings;
 
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.Calendar;
 
 public class MainActivity extends BaseActivity {
@@ -24,6 +21,7 @@ public class MainActivity extends BaseActivity {
     private boolean keep = true;
     SplashScreen splashScreen;
     long currentDate;
+    int currentDayOfWeek;
     SharedPrefsSettings prefsSettings;
 
 
@@ -36,6 +34,7 @@ public class MainActivity extends BaseActivity {
 
         handleWeekReset();
         handleStreakReset();
+        handleLastLogin();
         initializeGreeting();
         initializeButtons();
         handleDisclaimerAndVib();
@@ -86,31 +85,35 @@ public class MainActivity extends BaseActivity {
         if (currentDate - lastLogin > DAY_MILLIS * 2) {
             prefsSettings.setInt(prefsSettings.CURRENT_STREAK_KEY, 0);
         }
-        // Update last login to today
-        prefsSettings.setLong(prefsSettings.LAST_LOGIN_KEY, currentDate);
     }
-
 
     private void handleWeekReset() {
+        final int DAYS_IN_WEEK = 7;
         // Get last reset day
-        long lastResetDay = prefsSettings.getLong(prefsSettings.LAST_RESET_KEY, 0);
+        long lastLoginDay = prefsSettings.getLong(prefsSettings.LAST_LOGIN_KEY, 0);
+        int lastLoginDayOfWeek = prefsSettings.getInt(prefsSettings.LAST_LOGIN_DAY_OF_WEEK_KEY,0);
 
-        // Convert the last reset day from milliseconds to a LocalDate object
-        LocalDate lastResetDate = Instant.ofEpochMilli(lastResetDay).atZone(ZoneId.systemDefault()).toLocalDate();
+        long diffDays = (lastLoginDay-System.currentTimeMillis())/ DAY_MILLIS;
+        currentDayOfWeek = DayOfWeek.getCurrentDayOfWeek();
 
         // Check if the current date is in the same calendar week as the last reset date
-        if (!DayOfWeek.inSameCalendarWeek(lastResetDate)) {
-            // Reset the week tally to 0
-            prefsSettings.setInt(prefsSettings.WEEK_TALLY_KEY, 0);
-            // Update the last reset day
-            prefsSettings.setLong(prefsSettings.LAST_RESET_KEY, LocalDate.now(ZoneId.systemDefault()).atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli());
-            // Loop through each day of the week and reset its status to false
-            for (int i = 1; i < 8; i++) {
-                prefsSettings.setBoolean("day" + i, false);
-            }
+        if (currentDayOfWeek < lastLoginDayOfWeek || ( diffDays >= DAYS_IN_WEEK)) {
+            resetWeekTally();
         }
     }
-
+    private void resetWeekTally(){
+        // Reset the week tally to 0
+        prefsSettings.setInt(prefsSettings.WEEK_TALLY_KEY, 0);
+        // Loop through each day of the week and reset its status to false
+        for (int i = 1; i < 8; i++) {
+            prefsSettings.setBoolean("day" + i, false);
+        }
+    }
+    private void handleLastLogin(){
+    // Update last login to today
+        prefsSettings.setLong(prefsSettings.LAST_LOGIN_KEY, currentDate);
+        prefsSettings.setInt(prefsSettings.LAST_LOGIN_DAY_OF_WEEK_KEY,currentDayOfWeek);
+    }
 
     // Set a greeting based on the current time of day
     private void initializeGreeting() {

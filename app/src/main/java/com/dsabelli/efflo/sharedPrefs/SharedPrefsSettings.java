@@ -5,6 +5,8 @@ import android.content.SharedPreferences;
 
 public class SharedPrefsSettings {
     private static final String PREFS_NAME = "EffloSettings";
+    public final String LAST_LOGIN_KEY = "last_login";
+    public  final String LAST_LOGIN_DAY_OF_WEEK_KEY = "last_login_day_of_week";
     public final String LAST_RESET_KEY = "last_reset";
     public final String DISCLAIMER_KEY = "disclaimer";
     public final String TIMER_HEADING = "Timer";
@@ -21,7 +23,6 @@ public class SharedPrefsSettings {
     public final String TOTAL_SESSIONS_KEY = "total_completed";
     public final String CURRENT_STREAK_KEY = "current_streak";
     public final String LONGEST_STREAK_KEY = "longest_streak";
-    public final String LAST_LOGIN_KEY = "last_login";
     public final String MEDITATED_TODAY_KEY = "meditated_today";
     private final SharedPreferences sharedPreferences;
 
